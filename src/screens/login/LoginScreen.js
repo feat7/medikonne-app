@@ -14,7 +14,7 @@ export default class HomeScreen extends React.Component {
             </Button>
           </Left>
           <Body>
-            <Title>Medikonne</Title>
+            <Title>Login</Title>
           </Body>
           <Right />
         </Header>
