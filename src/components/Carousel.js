@@ -7,7 +7,8 @@ export default class Carousel extends Component {
     render() {
         return (
             <RnCarousel width={375} animate={true} loop={true}
-            indicatorAtBottom={false} delay={2000}
+            indicatorAtBottom={false} delay={2000} indicatorSize={17}
+            indicatorSpace={10}
             >
                 <Content>
                 <Card>
@@ -25,7 +26,7 @@ export default class Carousel extends Component {
                 <Card>
                     <CardItem>
                         <Body>
-                            <Text>Welcome To Medikonne</Text>
+                            <Text>Some more info..</Text>
                         </Body>
                     </CardItem>
                     <CardItem cardBody>
