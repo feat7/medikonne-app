@@ -110,8 +110,8 @@ export default {
 
   // Color
   brandPrimary: "#3F51B5",
-  brandInfo: "#3F57D3",
-  brandSuccess: "#5cb85c",
+  brandInfo: "#2980b9",
+  brandSuccess: "#27ae60",
   brandDanger: "#d9534f",
   brandWarning: "#f0ad4e",
   brandSidebar: "#252932",
@@ -155,7 +155,8 @@ export default {
 
   // Header
   toolbarBtnColor: "#fff",
-  toolbarDefaultBg: "#3F51B5",
+  toolbarDefaultBg: "#1abc9c",
+  toolbarBgNew: "#34495e",
   toolbarHeight: platform === "ios" ? (isIphoneX ? 88 : 64) : 56,
   toolbarIconSize: platform === "ios" ? 20 : 22,
   toolbarSearchIconSize: platform === "ios" ? 20 : 23,
@@ -163,10 +164,10 @@ export default {
   searchBarHeight: platform === "ios" ? 30 : 40,
   toolbarInverseBg: "#222",
   toolbarTextColor: "#fff",
-  toolbarDefaultBorder: "#3F51B5",
+  toolbarDefaultBorder: "#1abc9c",
   iosStatusbar: "light-content",
   get statusBarColor() {
-    return color(this.toolbarDefaultBg)
+    return color(this.toolbarBgNew)
       .darken(0.2)
       .hex();
   },
