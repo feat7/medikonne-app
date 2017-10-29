@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {KeyboardAvoidingView} from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, 
 Input, Item, Content, View, Text} from 'native-base';
-export default class LoginScreen extends Component {
+export default class RegisterScreen extends Component {
   render() {
     return (
       <Container>
@@ -13,7 +14,7 @@ export default class LoginScreen extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Login</Title>
+            <Title>Register</Title>
           </Body>
           <Right>
             <Button transparent>
@@ -22,14 +23,20 @@ export default class LoginScreen extends Component {
           </Right>
         </Header>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 8}}>
-        <Text style={{ padding: 4, marginBottom: 28}}>Login to Medikonne</Text>
+        <Text style={{ padding: 4, marginBottom: 28}}>Register to Medikonne</Text>
           <Item rounded style={{ marginBottom: 4}}>
-            <Input placeholder="Mobile number" />
+            <Input placeholder="Full Name" />
           </Item>
           <Item rounded style={{ marginBottom: 4}}>
-            <Input placeholder="Password" />
+            <Input placeholder="Mobile Number" />
           </Item>
-            <Button full rounded info bordered style={{ marginBottom: 28}}><Text>Login</Text></Button>
+          <Item rounded style={{ marginBottom: 4}}>
+            <Input secureTextEntry={true} placeholder="Password" />
+          </Item>
+          <Item rounded style={{ marginBottom: 4}}>
+            <Input secureTextEntry={true} placeholder="Confirm Password" />
+          </Item>
+          <Button full rounded info style={{ marginBottom: 38}}><Text>Sign Up</Text></Button>
         </View>
       </Container>
     );

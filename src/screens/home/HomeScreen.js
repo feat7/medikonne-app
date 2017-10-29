@@ -34,7 +34,8 @@ export default class HomeScreen extends Component {
           onPress={ () => this.props.navigation.navigate("Login") }>
             <Text>Login</Text>
           </Button>
-          <Button info full rounded>
+          <Button info full rounded
+          onPress={ () => this.props.navigation.navigate("Register") }>
             <Text>Register</Text>
           </Button>
         </View>
