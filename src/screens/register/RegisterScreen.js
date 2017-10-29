@@ -22,7 +22,8 @@ export default class RegisterScreen extends Component {
             </Button>
           </Right>
         </Header>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 8}}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 8,
+        backgroundColor: '#fff'}}>
         <Text style={{ padding: 4, marginBottom: 28}}>Register to Medikonne</Text>
           <Item rounded style={{ marginBottom: 4}}>
             <Input placeholder="Full Name" />

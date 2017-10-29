@@ -21,14 +21,14 @@ export default class HomeScreen extends Component {
         </Header>
         <View style={{
           flex: 1,
-          backgroundColor: '#ecf0f1'          
         }}>
           <Carousel />
         </View>
         <View style={{
           flex: 0.7,
           padding: 8,
-          backgroundColor: '#ecf0f1'          
+          backgroundColor: '#ecf0f1',
+          justifyContent: 'center'          
         }}>
           <Button success full rounded style={{ marginBottom: 8 }}
           onPress={ () => this.props.navigation.navigate("Login") }>

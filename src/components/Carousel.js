@@ -12,7 +12,7 @@ export default class Carousel extends Component {
             >
                 <Content>
                 <Card>
-                    <CardItem>
+                    <CardItem cardHeader>
                         <Body>
                             <Text>Welcome To Medikonne</Text>
                         </Body>
@@ -24,7 +24,7 @@ export default class Carousel extends Component {
                 </Content>
                 <Content>
                 <Card>
-                    <CardItem>
+                    <CardItem cardHeader>
                         <Body>
                             <Text>Some more info..</Text>
                         </Body>
