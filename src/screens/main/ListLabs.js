@@ -6,7 +6,7 @@ import { Container, Header, Title, View, Left, Icon, Button, Body,
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/material';
 
-export default class ListTests extends Component {
+export default class ListLabs extends Component {
 
     constructor()
     {
@@ -19,7 +19,7 @@ export default class ListTests extends Component {
 
     componentWillMount()
     {
-        fetch("http://10.0.2.2/app.tests", {method: "GET"})
+        fetch("http://10.0.2.2/app.test.cost/get?test_id="+this.props.navigation.state.params.test_id, {method: "GET"})
         .then((response) => response.json())
         .then((responseData) => {
             console.log(responseData)
@@ -42,7 +42,7 @@ export default class ListTests extends Component {
                     <Icon name="md-home" />
                   </Button>
                 </Left>
-                <Body><Title>Tests</Title></Body>
+                <Body><Title>Labs for {this.props.navigation.state.params.test}</Title></Body>
               </Header>
               <Header searchBar rounded>
                 <Item>
@@ -58,12 +58,12 @@ export default class ListTests extends Component {
                 {
                     this.state.fetched ? <List dataArray={this.state.testList}
                     renderRow={(item) =>
-                        <ListItem
-                        onPress={ () => this.props.navigation.navigate('ListLabs', {test_id: item.id, test: item.name}) }>
+                        <ListItem>
                             <Thumbnail square size={80} source={require('../../img/laboratory.png')} />
                             <Body>
-                            <Text>{item.name}</Text>
-                            <Text note>{item.description}</Text>
+                            <Text>{item.lab.name}</Text>
+                            <Text note>{item.lab.description}</Text>
+                            <Text note>Price: {item.price} INR</Text>
                             </Body>
                         </ListItem>
                     }>

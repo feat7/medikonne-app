@@ -47,7 +47,7 @@ export default class HomeScreen extends Component {
             </Button>
             <Button vertical>
                 <Icon name="flask" />
-                <Text>Lab</Text>
+                <Text>Tests</Text>
             </Button>
             <Button vertical>
                 <Icon active name="settings" />
