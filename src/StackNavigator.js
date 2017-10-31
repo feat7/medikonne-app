@@ -3,6 +3,7 @@ import HomeScreen from './screens/home/HomeScreen'
 import LoginScreen from './screens/login/LoginScreen'
 import RegisterScreen from './screens/register/RegisterScreen'
 import MainScreen from './screens/main/MainScreen'
+import ListTests from './screens/main/ListTests'
 import HomeTabs from './screens/main/HomeTabs'
 
 const RootNavigator = StackNavigator({
@@ -20,6 +21,12 @@ const RootNavigator = StackNavigator({
   },
   Register: {
     screen: RegisterScreen,
+    navigationOptions: ({navigation}) => ({
+      header:false
+    })
+  },
+  ListTests: {
+    screen: ListTests,
     navigationOptions: ({navigation}) => ({
       header:false
     })

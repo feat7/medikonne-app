@@ -3,7 +3,7 @@ import LoginScreen from '../login/LoginScreen'
 import MainScreen from './MainScreen'
 
 const HomeTabs = TabNavigator({
-    Home: {
+    HomeTab: {
         screen: MainScreen,
         navigationOptions: ({navigation}) => ({
             header:false,

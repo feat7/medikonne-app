@@ -21,11 +21,12 @@ export default class HomeScreen extends Component {
         </Header>
         <Content>
             <List>
-            <ListItem>
+            <ListItem
+            onPress={ () => this.props.navigation.navigate("ListTests") }>
                 <Thumbnail square size={80} source={require('../../img/laboratory.png')} />
                 <Body>
-                <Text>Medikonne</Text>
-                <Text note>Its time to make the difference</Text>
+                <Text>Tests</Text>
+                <Text note>Take a test</Text>
                 </Body>
             </ListItem>
             <ListItem>
@@ -38,7 +39,8 @@ export default class HomeScreen extends Component {
             </List>
         </Content>
         <Footer>
-            <FooterTab>
+            <FooterTab
+            style={ {backgroundColor: '#16a085'} }>
             <Button vertical active>
                 <Icon name="md-home" />
                 <Text>Home</Text>

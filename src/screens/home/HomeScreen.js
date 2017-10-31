@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavigationActions } from 'react-navigation';
 import { Image, StyleSheet } from 'react-native';
 import Carousel from '../../components/Carousel';
 import { Container, Header, Title, View, Left, Icon, Button, Body,
@@ -38,9 +39,23 @@ export default class HomeScreen extends Component {
           onPress={ () => this.props.navigation.navigate("Register") }>
             <Text>Register</Text>
           </Button>
+          <Button info full rounded
+          onPress={ () => 
+            { const resetAction = NavigationActions.reset({
+                index: 0,
+                actions: [
+                  NavigationActions.navigate({ routeName: 'Main'})
+                ]
+              })
+              this.props.navigation.dispatch(resetAction)
+            }
+            }>
+            <Text>Home</Text>
+          </Button>
         </View>
       </Container>
       </StyleProvider>
     );
   }
 }
+
