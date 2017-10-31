@@ -51,7 +51,7 @@ export default class HomeScreen extends Component {
                 <Icon active name="settings" />
                 <Text>Settings</Text>
             </Button>
-            <Button vertical onPress={ () => this.props.navigation.navigate("Login") }>
+            <Button vertical onPress={ () => this.props.navigation.navigate("LoginTab") }>
                 <Icon name="person" />
                 <Text>Account</Text>
             </Button>

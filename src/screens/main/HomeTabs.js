@@ -1,15 +1,23 @@
 import { TabNavigator } from 'react-navigation';
-import LoginScreen from './screens/login/LoginScreen'
-import MainScreen from './screens/main/MainScreen'
+import LoginScreen from '../login/LoginScreen'
+import MainScreen from './MainScreen'
 
 const HomeTabs = TabNavigator({
     Home: {
-        screen: MainScreen
+        screen: MainScreen,
+        navigationOptions: ({navigation}) => ({
+            header:false,
+            tabBarVisible:false 
+        })
     },
-    Login: {
-        screen: LoginScreen
+    LoginTab: {
+        screen: LoginScreen,
+        navigationOptions: ({navigation}) => ({
+            header:false,
+            tabBarVisible:false 
+        })
     }
 
-}, { headerMode: 'screen'});
+}, { headerMode: 'none'});
 
 export default HomeTabs;

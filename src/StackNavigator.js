@@ -27,7 +27,8 @@ const RootNavigator = StackNavigator({
   Main: {
     screen: HomeTabs,
     navigationOptions: ({navigation}) => ({
-      header:false
+      header:false,
+      tabBarVisible:false 
     })
   }
 }, { headerMode: 'screen'});
