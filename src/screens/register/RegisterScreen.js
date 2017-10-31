@@ -42,22 +42,26 @@ export default class RegisterScreen extends Component {
           <Item rounded style={{ marginBottom: 4}}>
             <Input placeholder="Full Name" 
             onChangeText={(name) => this.setState({name: name })}
-            value={this.state.name}/>
+            value={this.state.name}
+            style={{marginLeft: 10}}/>
           </Item>
           <Item rounded style={{ marginBottom: 4}}>
             <Input placeholder="Mobile Number" 
             onChangeText={(mobile) => this.setState({mobile: mobile })}
-            value={this.state.mobile}/>
+            value={this.state.mobile}
+            style={{marginLeft: 10}}/>
           </Item>
           <Item rounded style={{ marginBottom: 4}}>
             <Input secureTextEntry={true} placeholder="Password"
             onChangeText={(password) => this.setState({password: password })} 
-            value={this.state.password}/>
+            value={this.state.password}
+            style={{marginLeft: 10}}/>
           </Item>
           <Item rounded style={{ marginBottom: 4}}>
             <Input secureTextEntry={true} placeholder="Confirm Password"
             onChangeText={(confirm_password) => this.setState({confirm_password: confirm_password })}
-            value={this.state.confirm_password} />
+            value={this.state.confirm_password}
+            style={{marginLeft: 10}} />
           </Item>
           <Button full rounded info style={{ marginBottom: 38}}
           onPress={() =>   

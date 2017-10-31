@@ -3,6 +3,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title,
 Input, Item, Content, View, Text} from 'native-base';
 import { ToastAndroid } from 'react-native';
 import FormData from 'FormData';
+import { NavigationActions } from 'react-navigation';
 
 export default class LoginScreen extends Component {
 
@@ -39,12 +40,14 @@ export default class LoginScreen extends Component {
           <Item rounded style={{ marginBottom: 4}}>
             <Input placeholder="Mobile number"
             onChangeText={(mobile) => this.setState({mobile: mobile })}
-            value={this.state.mobile} />
+            value={this.state.mobile}
+            style={{marginLeft: 10}} />
           </Item>
           <Item rounded style={{ marginBottom: 4}}>
             <Input secureTextEntry={true} placeholder="Password" 
             onChangeText={(password) => this.setState({password: password })}
-            value={this.state.password}/>
+            value={this.state.password}
+            style={{marginLeft: 10}}/>
           </Item>
             <Button full rounded info bordered style={{ marginBottom: 28}}
             onPress={() =>   
@@ -62,6 +65,14 @@ export default class LoginScreen extends Component {
                           console.log(responseData)
                           if(responseData.success) {
                             ToastAndroid.showWithGravityAndOffset('Logged in Successfully!', ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
+                            const resetAction = NavigationActions.reset({
+                                index: 0,
+                                actions: [
+                                  NavigationActions.navigate({ routeName: 'Main'})
+                                ]
+                            })
+                            this.props.navigation.dispatch(resetAction)
+                                                      
                           } else {
                             ToastAndroid.showWithGravityAndOffset('Invaild Credentials', ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);                            
                           }
