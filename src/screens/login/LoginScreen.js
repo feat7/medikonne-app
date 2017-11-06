@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, 
 Input, Item, Content, View, Text} from 'native-base';
-import { ToastAndroid } from 'react-native';
+import { ToastAndroid, AsyncStorage } from 'react-native';
 import FormData from 'FormData';
 import { NavigationActions } from 'react-navigation';
 
@@ -64,6 +64,12 @@ export default class LoginScreen extends Component {
                           this.setState({response: responseData});
                           console.log(responseData)
                           if(responseData.success) {
+                            try {
+                              async () => await AsyncStorage.setItem('@MedikonneAuth:token', responseData.token);
+                            } catch (error) {
+                              // Error saving data
+                              console.log("Error.. token not saved");
+                            }
                             ToastAndroid.showWithGravityAndOffset('Logged in Successfully!', ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
                             const resetAction = NavigationActions.reset({
                                 index: 0,
