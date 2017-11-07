@@ -20,7 +20,7 @@ export default class ListTests extends Component {
     componentWillMount()
     {
         fetch("http://10.0.2.2/app.tests", {method: "GET"})
-        .then((response) => response.json())
+        .then(response => response.json())
         .then((responseData) => {
             console.log(responseData)
             this.setState({ fetched: true });

@@ -12,16 +12,16 @@ export default class HomeScreen extends Component {
     super();
     this.state = {
       loggedIn: false,
-      token: null
+      token: null,
+      fetched: false
     }
-
     this.getToken();
   }
 
   async getToken() {
     let promise = await AsyncStorage.getItem('@MedikonneAuth:token').
     then(token => {
-      try {this.setState({token: token, loggedIn: true});
+      this.setState({token: token, loggedIn: true});
       const resetAction = NavigationActions.reset({
         index: 0,
         actions: [
@@ -29,10 +29,7 @@ export default class HomeScreen extends Component {
         ]
       })
       this.props.navigation.dispatch(resetAction)
-      console.log(this.state); }
-      catch (e) {
-        console.log(e);
-      }    
+      console.log(this.state);   
     }); 
   }
 

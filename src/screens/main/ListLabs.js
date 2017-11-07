@@ -15,6 +15,7 @@ export default class ListLabs extends Component {
             fetched: false,
             testList: []
         }
+        console.log(this.state);
     }
 
     componentWillMount()
