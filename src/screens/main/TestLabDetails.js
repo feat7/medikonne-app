@@ -16,6 +16,8 @@ export default class TestLabDetails extends Component {
             <Container style={{flex:1, alignItems: 'center', justifyContent:'center'}}>
                 <H1>{details.lab.lab.name}</H1>
                 <Text>{details.lab.lab.description}</Text>
+                <Text>{details.lab.test.name}</Text>
+                <Text>{details.lab.price} INR</Text>
             </Container>
             </StyleProvider> 
         );
