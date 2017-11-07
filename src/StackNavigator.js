@@ -5,6 +5,7 @@ import RegisterScreen from './screens/register/RegisterScreen'
 import MainScreen from './screens/main/MainScreen'
 import ListTests from './screens/main/ListTests'
 import ListLabs from './screens/main/ListLabs'
+import TestLabDetails from './screens/main/TestLabDetails'
 import HomeTabs from './screens/main/HomeTabs'
 
 const RootNavigator = StackNavigator({
@@ -37,6 +38,9 @@ const RootNavigator = StackNavigator({
     navigationOptions: ({navigation}) => ({
       header:false
     })
+  },
+  TestLabDetails: {
+    screen: TestLabDetails,
   },
   Main: {
     screen: HomeTabs,
