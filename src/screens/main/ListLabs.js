@@ -16,8 +16,6 @@ export default class ListLabs extends Component {
             testList: []
         }
         console.log(this.state);
-
-        this._openDetails = this._openDetails.bind(this)
     }
 
     componentWillMount()
@@ -33,10 +31,6 @@ export default class ListLabs extends Component {
             }
         })
         .done()
-    }
-
-    _openDetails(item) {
-            this.props.navigation.navigate('TestLabDetails', {lab: item})
     }
 
     render() {
@@ -67,7 +61,7 @@ export default class ListLabs extends Component {
                     renderRow={(item) =>
                         <TouchableOpacity>
                         <ListItem onPress={
-                          () => this.props.navigation.navigate('TestLabDetails', {lab: item})  
+                          () => this.props.navigation.navigate('TestLabDetails', {lab: item, title: item.test.name})  
                         }>
                             <Thumbnail square size={80} source={require('../../img/laboratory.png')} />
                             <Body>
