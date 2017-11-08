@@ -65,7 +65,7 @@ export default class LoginScreen extends Component {
                           console.log(responseData)
                           if(responseData.success) {
                             try {
-                              async () => await AsyncStorage.setItem('@MedikonneAuth:token', responseData.token);
+                              AsyncStorage.setItem('@MedikonneAuth:token', responseData.token);
                             } catch (error) {
                               // Error saving data
                               console.log("Error.. token not saved");

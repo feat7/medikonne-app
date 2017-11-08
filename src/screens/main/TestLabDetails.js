@@ -40,6 +40,10 @@ export default class TestLabDetails extends Component {
     }
 
     _requestAppointment() {
+        if(!this.state.datetime1) {
+            ToastAndroid.showWithGravityAndOffset('Please Select Date and Time!', ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
+            return;
+        }
         let details = this.props.navigation.state.params;        
         console.log(this.props);
         this.setState({requestAppointment: true});
@@ -60,7 +64,7 @@ export default class TestLabDetails extends Component {
                 if(responseData.success) {
                     ToastAndroid.showWithGravityAndOffset('Appointment Booked!', ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);                    
                 }
-                console.log(responseData);
+                console.log("fjldjfldf",responseData);
             }
             ).done()      
     }
