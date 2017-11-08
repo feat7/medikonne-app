@@ -5,6 +5,7 @@ import material from '../../../native-base-theme/variables/material';
 import { StyleProvider, Container, Text, H1,
 Button, View, Content, Card, CardItem, Body, Item,
 Input } from 'native-base';
+import { AsyncStorage, ToastAndroid } from 'react-native';
 import FormData from 'FormData';
 
 export default class TestLabDetails extends Component {
@@ -21,25 +22,45 @@ export default class TestLabDetails extends Component {
         super();
         this.state = {
             datetime1: '',
-            requestAppointment: false
+            requestAppointment: false,
+            notes: '',
+            token: '',
+            details: ''
         }
 
         this._requestAppointment = this._requestAppointment.bind(this);
+        this.getToken();
+    }
+
+    async getToken() {
+        let promise = await AsyncStorage.getItem('@MedikonneAuth:token').
+        then(token => {
+            this.setState({token: token});  
+        }).done(); 
     }
 
     _requestAppointment() {
+        let details = this.props.navigation.state.params;        
+        console.log(this.props);
         this.setState({requestAppointment: true});
         var formdata = new FormData();
         
-        console.log(this.state);
-        formdata.append('mobile', this.state.mobile)
-        formdata.append('password', this.state.password)
+        formdata.append('token', this.state.token);
+        formdata.append('lab_id', details.lab.lab_id);
+        formdata.append('test_id', details.lab.test_id);
+        formdata.append('date_time_tz', this.state.datetime1);
+        formdata.append('notes', this.state.notes);
+
+        console.log("Details", details);
     
         fetch("http://10.0.2.2/app.request.lab.appointment", {method: "POST", body: formdata})
-            .then((response) => response.json())
+            .then(response => response.json())
             .then((responseData) => {
                 this.setState({response: responseData});
-
+                if(responseData.success) {
+                    ToastAndroid.showWithGravityAndOffset('Appointment Booked!', ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);                    
+                }
+                console.log(responseData);
             }
             ).done()      
     }
@@ -92,6 +113,8 @@ export default class TestLabDetails extends Component {
             <Item rounded>
                 <Input
                 multiline={true}
+                onChangeText={(notes) => this.setState({notes: notes })}
+                value={this.state.notes}
                 style={{marginLeft: 8}}
                 placeholder='Any special note (optional)'/>
             </Item>
