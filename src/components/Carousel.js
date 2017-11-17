@@ -14,7 +14,7 @@ export default class Carousel extends Component {
                 <Card>
                     <CardItem cardHeader>
                         <Body>
-                            <Text>Welcome To Medikonne</Text>
+                            <Text>Welcome To HeathBoat</Text>
                         </Body>
                     </CardItem>
                     <CardItem cardBody>

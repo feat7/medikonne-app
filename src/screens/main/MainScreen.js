@@ -17,7 +17,7 @@ export default class HomeScreen extends Component {
               <Icon name="md-home" />
             </Button>
           </Left>
-          <Body><Title>Medikonne</Title></Body>
+          <Body><Title>HealthBoat</Title></Body>
         </Header>
         <Content>
             <List>
@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
             <ListItem>
                 <Thumbnail square size={80} source={require('../../img/laboratory.png')} />
                 <Body>
-                <Text>Medikonne</Text>
+                <Text>HealthBoat</Text>
                 <Text note>Its time to make the difference</Text>
                 </Body>
             </ListItem>

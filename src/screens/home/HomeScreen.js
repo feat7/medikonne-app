@@ -62,7 +62,7 @@ export default class HomeScreen extends Component {
               <Icon name="md-home" />
             </Button>
           </Left>
-          <Body><Title>Medikonne</Title></Body>
+          <Body><Title>HealthBoat</Title></Body>
         </Header>
         {this.state.fetched ? null : <Content><Spinner /></Content>}
         
@@ -86,19 +86,6 @@ export default class HomeScreen extends Component {
             <Button info full rounded style={{ marginBottom: 8 }}
             onPress={ () => this.props.navigation.navigate("Register") }>
               <Text>Register</Text>
-            </Button>
-            <Button info full rounded
-            onPress={ () => 
-              { const resetAction = NavigationActions.reset({
-                  index: 0,
-                  actions: [
-                    NavigationActions.navigate({ routeName: 'Main'})
-                  ]
-                })
-                this.props.navigation.dispatch(resetAction)
-              }
-              }>
-              <Text>Home</Text>
             </Button>
           </View></Container>
           
